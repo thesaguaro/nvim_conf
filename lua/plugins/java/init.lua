@@ -18,6 +18,17 @@ return {
       {
         "neovim/nvim-lspconfig",
         opts = {
+          servers = {
+            jdtls = {
+              keys = {
+                -- Workaround for the lack of neotest-java support in nvim-java (https://github.com/nvim-java/nvim-java/issues/97)
+                { "<leader>td", function() require('java').test.debug_current_method() end, desc = "Debug Nearest (Java)" },
+                { "<leader>tr", function() require('java').test.run_current_method() end, desc = "Run Nearest (Java)"},
+                { "<leader>tt", function() require('java').test.run_current_class() end, desc = "Run File (Java)"},
+                { "<leader>to", function() require('java').test.view_last_report() end, desc = "Show Output (Java)"}
+              }
+            },
+          },
           setup = {
             jdtls = function()
               require('java').setup({
