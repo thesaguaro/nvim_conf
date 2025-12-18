@@ -1,13 +1,10 @@
 return {
+  { "blazkowolf/gruber-darker.nvim" },
 
-  { "EdenEast/nightfox.nvim" },
-
-      (
-    -- Configure LazyVim to load gruvbox
-{
-      "LazyVim/LazyVim",
-      opts = {
-        colorscheme = "carbonfox",
-      },
-    }),
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "gruber-darker",
+    },
+  },
 }
